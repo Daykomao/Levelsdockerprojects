@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Encuentra tecnología, hogar, moda y mucho más en Mercadito."
+    />
+    <meta name="theme-color" content="#ffe600" />
+    <title>Mercadito — Todo lo que buscas, cerca de ti</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="topbar">
+        <a class="brand" href="/" aria-label="Mercadito, inicio">
+          <span class="brand-mark" aria-hidden="true">m</span>
+          <span>mercadito</span>
+        </a>
+
+        <form class="search" role="search" id="search-form">
+          <label class="visually-hidden" for="search-input">Buscar productos</label>
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Estoy buscando..."
+            autocomplete="off"
+          />
+          <button type="submit" aria-label="Buscar">⌕</button>
+        </form>
+
+        <a class="delivery-promo" href="#ofertas">
+          <span class="delivery-icon" aria-hidden="true">⌂</span>
+          <span><strong>Envío gratis</strong><br />en tu primera compra</span>
+        </a>
+      </div>
+
+      <nav class="nav-row" aria-label="Navegación principal">
+        <div class="nav-links">
+          <a href="#categorias">Categorías <span aria-hidden="true">⌄</span></a>
+          <a href="#ofertas">Ofertas</a>
+          <a href="#productos">Historial</a>
+          <a href="#productos">Tiendas oficiales</a>
+          <a href="#productos">Vender</a>
+          <a href="#ayuda">Ayuda</a>
+        </div>
+        <div class="account-links">
+          <a href="#cuenta">Crea tu cuenta</a>
+          <a href="#cuenta">Ingresa</a>
+          <a href="#compras">Mis compras</a>
+          <a class="cart-link" href="#compras" aria-label="Carrito de compras">
+            <span aria-hidden="true">♧</span>
+            <span id="cart-count" class="cart-count" aria-live="polite">0</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="ofertas" aria-label="Promoción destacada">
+        <div class="hero-content">
+          <span class="eyebrow">ESPECIAL DE TEMPORADA</span>
+          <h1>Lo que necesitas,<br />a un clic de distancia.</h1>
+          <p>Grandes hallazgos para todos los días.</p>
+          <a class="button button-dark" href="#productos">Explorar ofertas <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun"></div>
+          <div class="bag bag-back"><span>✦</span></div>
+          <div class="bag bag-front"><span>m</span></div>
+          <div class="hero-sparkle sparkle-one">✦</div>
+          <div class="hero-sparkle sparkle-two">✳</div>
+        </div>
+        <div class="hero-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+      </section>
+
+      <section class="benefits" aria-label="Beneficios">
+        <article class="benefit">
+          <span class="benefit-icon">▱</span>
+          <div><h2>Medios de pago</h2><p>Tarjetas y opciones para ti</p></div>
+          <span class="benefit-arrow" aria-hidden="true">›</span>
+        </article>
+        <article class="benefit">
+          <span class="benefit-icon">♧</span>
+          <div><h2>Envío gratis</h2><p>En millones de productos</p></div>
+          <span class="benefit-arrow" aria-hidden="true">›</span>
+        </article>
+        <article class="benefit">
+          <span class="benefit-icon">◉</span>
+          <div><h2>Compra protegida</h2><p>Recibe lo que esperabas</p></div>
+          <span class="benefit-arrow" aria-hidden="true">›</span>
+        </article>
+      </section>
+
+      <section class="section categories-section" id="categorias">
+        <div class="section-heading">
+          <div><p class="section-kicker">PARA CADA DÍA</p><h2>Explora por categoría</h2></div>
+          <a class="text-link" href="#productos">Ver todo <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="category-list" aria-label="Filtrar por categoría">
+          <button class="category-card active" data-category="all" type="button">
+            <span class="category-image category-all" aria-hidden="true">✦</span><span>Todo</span>
+          </button>
+          <button class="category-card" data-category="Tecnología" type="button">
+            <span class="category-image category-tech" aria-hidden="true">▣</span><span>Tecnología</span>
+          </button>
+          <button class="category-card" data-category="Hogar" type="button">
+            <span class="category-image category-home" aria-hidden="true">⌂</span><span>Hogar</span>
+          </button>
+          <button class="category-card" data-category="Moda" type="button">
+            <span class="category-image category-fashion" aria-hidden="true">◒</span><span>Moda</span>
+          </button>
+          <button class="category-card" data-category="Deportes" type="button">
+            <span class="category-image category-sport" aria-hidden="true">◉</span><span>Deportes</span>
+          </button>
+          <button class="category-card" data-category="Belleza" type="button">
+            <span class="category-image category-beauty" aria-hidden="true">✿</span><span>Belleza</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="section products-section" id="productos">
+        <div class="section-heading">
+          <div><p class="section-kicker">SELECCIONADOS PARA TI</p><h2>Ofertas que te van a gustar</h2></div>
+          <a class="text-link" href="#productos">Ver más <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="results-message" id="results-message" aria-live="polite"></p>
+        <div class="product-grid" id="product-grid">
+          <article class="product-card" data-category="Tecnología" data-name="audífonos inalámbricos">
+            <div class="product-art art-headphones"><span class="product-emoji" aria-hidden="true">🎧</span><span class="discount-tag">-25%</span><button class="favorite" aria-label="Agregar audífonos a favoritos" type="button">♡</button></div>
+            <div class="product-info"><p class="product-category">TECNOLOGÍA</p><h3>Audífonos inalámbricos Bluetooth</h3><p class="old-price">$ 899</p><p class="price">$ 674 <span class="discount">25% OFF</span></p><p class="installments">6 meses sin intereses de $112.33</p><p class="shipping">Envío gratis</p><button class="add-button" type="button">Agregar al carrito</button></div>
+          </article>
+          <article class="product-card" data-category="Hogar" data-name="lámpara de mesa">
+            <div class="product-art art-lamp"><span class="product-emoji" aria-hidden="true">💡</span><span class="discount-tag">-18%</span><button class="favorite" aria-label="Agregar lámpara a favoritos" type="button">♡</button></div>
+            <div class="product-info"><p class="product-category">HOGAR</p><h3>Lámpara de mesa diseño nórdico</h3><p class="old-price">$ 1,199</p><p class="price">$ 983 <span class="discount">18% OFF</span></p><p class="installments">3 meses sin intereses de $327.67</p><p class="shipping">Envío gratis</p><button class="add-button" type="button">Agregar al carrito</button></div>
+          </article>
+          <article class="product-card" data-category="Moda" data-name="mochila urbana">
+            <div class="product-art art-backpack"><span class="product-emoji" aria-hidden="true">🎒</span><span class="discount-tag">-30%</span><button class="favorite" aria-label="Agregar mochila a favoritos" type="button">♡</button></div>
+            <div class="product-info"><p class="product-category">MODA</p><h3>Mochila urbana ligera para diario</h3><p class="old-price">$ 749</p><p class="price">$ 524 <span class="discount">30% OFF</span></p><p class="installments">3 meses sin intereses de $174.67</p><p class="shipping">Envío gratis</p><button class="add-button" type="button">Agregar al carrito</button></div>
+          </article>
+          <article class="product-card" data-category="Deportes" data-name="termo deportivo">
+            <div class="product-art art-bottle"><span class="product-emoji" aria-hidden="true">🥤</span><span class="discount-tag">-15%</span><button class="favorite" aria-label="Agregar termo a favoritos" type="button">♡</button></div>
+            <div class="product-info"><p class="product-category">DEPORTES</p><h3>Termo deportivo acero inoxidable</h3><p class="old-price">$ 529</p><p class="price">$ 450 <span class="discount">15% OFF</span></p><p class="installments">3 meses sin intereses de $150</p><p class="shipping">Envío gratis</p><button class="add-button" type="button">Agregar al carrito</button></div>
+          </article>
+          <article class="product-card" data-category="Belleza" data-name="crema hidratante">
+            <div class="product-art art-cream"><span class="product-emoji" aria-hidden="true">🧴</span><span class="discount-tag">-20%</span><button class="favorite" aria-label="Agregar crema a favoritos" type="button">♡</button></div>
+            <div class="product-info"><p class="product-category">BELLEZA</p><h3>Crema hidratante cuidado diario</h3><p class="old-price">$ 389</p><p class="price">$ 311 <span class="discount">20% OFF</span></p><p class="installments">Pago con tarjeta disponible</p><p class="shipping">Envío gratis</p><button class="add-button" type="button">Agregar al carrito</button></div>
+          </article>
+          <article class="product-card" data-category="Tecnología" data-name="reloj inteligente">
+            <div class="product-art art-watch"><span class="product-emoji" aria-hidden="true">⌚</span><span class="discount-tag">-22%</span><button class="favorite" aria-label="Agregar reloj inteligente a favoritos" type="button">♡</button></div>
+            <div class="product-info"><p class="product-category">TECNOLOGÍA</p><h3>Reloj inteligente pantalla táctil</h3><p class="old-price">$ 1,499</p><p class="price">$ 1,169 <span class="discount">22% OFF</span></p><p class="installments">6 meses sin intereses de $194.83</p><p class="shipping">Envío gratis</p><button class="add-button" type="button">Agregar al carrito</button></div>
+          </article>
+        </div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span aria-hidden="true">⌕</span>
+          <h3>No encontramos productos</h3>
+          <p>Prueba con otra búsqueda o elige una categoría diferente.</p>
+        </div>
+      </section>
+
+      <section class="newsletter" id="ayuda">
+        <div><p class="section-kicker">BUENAS COMPRAS, BUENAS NOTICIAS</p><h2>Ideas y ofertas directo a tu correo.</h2><p>Suscríbete para descubrir algo nuevo cada semana.</p></div>
+        <form id="newsletter-form" class="newsletter-form">
+          <label class="visually-hidden" for="email-input">Tu correo electrónico</label>
+          <input id="email-input" type="email" placeholder="tu@correo.com" required />
+          <button class="button button-dark" type="submit">Quiero recibirlas</button>
+          <p class="newsletter-message" id="newsletter-message" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="cuenta">
+      <a class="brand footer-brand" href="/" aria-label="Mercadito, inicio"><span class="brand-mark" aria-hidden="true">m</span><span>mercadito</span></a>
+      <p>Compras fáciles, hallazgos felices.</p>
+      <div class="footer-links"><a href="#ayuda">Ayuda</a><a href="#compras">Privacidad</a><a href="#compras">Términos y condiciones</a></div>
+      <small>© 2026 Mercadito. Sitio de demostración.</small>
+      <span id="compras"></span>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
